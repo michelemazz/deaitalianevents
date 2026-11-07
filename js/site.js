@@ -18,6 +18,7 @@
   if (header && toggle) {
     const setOpen = (open) => {
       header.classList.toggle('is-open', open);
+      document.documentElement.classList.toggle('menu-open', open);
       toggle.setAttribute('aria-expanded', open);
       document.documentElement.style.setProperty('--header-bottom', header.getBoundingClientRect().bottom + 'px');
     };
