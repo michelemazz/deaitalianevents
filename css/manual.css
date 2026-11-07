@@ -74,3 +74,11 @@ details[open] .acc-closed{display:none!important}
 /* ---- video incorporato (16:9, riempie il contenitore) ---- */
 .video-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
 .video-wrap iframe{position:absolute;inset:0;display:block;width:100%;height:100%;border:0;background:#000}
+
+/* ---- prestazioni di scroll ---- */
+.hero::before{display:none}
+.hero .bg-slide{filter:grayscale(1)}
+.bg-slide.is-active{will-change:opacity,transform}
+.is-offscreen .ticker-text{animation-play-state:paused}
+.is-offscreen.bg-slides .bg-slide.is-active,.is-offscreen .bg-slide.is-active{transition:none}
+.is-offscreen .reviews-track,.is-offscreen .cr-track{transition:none}

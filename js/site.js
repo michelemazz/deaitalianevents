@@ -3,6 +3,16 @@
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ferma animazioni e autoplay quando l'elemento non è visibile (scroll più fluido) */
+  const watched = $$('.bg-slides, .ticker, .reviews, .carousel');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => e.target.classList.toggle('is-offscreen', !e.isIntersecting));
+    }, { rootMargin: '100px' });
+    watched.forEach((el) => io.observe(el));
+  }
+  const offscreen = (el) => el.classList.contains('is-offscreen');
+
   /* menu */
   const header = $('.site-header'), toggle = $('.nav-toggle');
   if (header && toggle) {
@@ -24,6 +34,7 @@
     const every = +box.dataset.interval || 1500;
     let i = 0;
     setInterval(() => {
+      if (offscreen(box)) return;
       slides[i].classList.toggle('is-active', false);
       i = (i + 1) % slides.length;
       slides[i].classList.toggle('is-active', true);
@@ -60,7 +71,7 @@
     root.addEventListener('mouseleave', () => paused = false);
     addEventListener('resize', () => go(Math.min(idx, maxIdx())));
     const delay = +root.dataset.autoplay || 0;
-    if (delay && !reduce) setInterval(() => { if (!paused && maxIdx() > 0) go(idx + 1); }, delay);
+    if (delay && !reduce) setInterval(() => { if (!paused && !offscreen(root) && maxIdx() > 0) go(idx + 1); }, delay);
     go(0);
   });
 
@@ -136,7 +147,7 @@
     function sync() { dotBtns.forEach((b, j) => b.setAttribute('aria-selected', j === (idx % (loop() ? count : maxIdx() + 1)))); }
     root.addEventListener('mouseenter', () => { paused = true; });
     root.addEventListener('mouseleave', () => { paused = false; });
-    if (cfg.auto && !reduce) setInterval(() => { if (!paused && !document.hidden) go(idx + 1); }, cfg.auto + (cfg.speed || 500));
+    if (cfg.auto && !reduce) setInterval(() => { if (!paused && !document.hidden && !offscreen(root)) go(idx + 1); }, cfg.auto + (cfg.speed || 500));
     mqT.addEventListener('change', layout); mqM.addEventListener('change', layout);
     addEventListener('resize', () => move(false));
     layout();
