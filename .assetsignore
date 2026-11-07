@@ -6,3 +6,5 @@ README.md
 .omc
 .claude
 .DS_Store
+CNAME
+.nojekyll
