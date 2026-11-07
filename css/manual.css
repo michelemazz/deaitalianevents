@@ -95,3 +95,5 @@ details[open] .acc-closed{display:none!important}
 .carousel:not(.cr-outside) .cr-prev{left:10px}
 .carousel:not(.cr-outside) .cr-next{right:10px}
 @media (max-width:1024px){.carousel.cr-outside .cr-viewport{margin-left:30px;margin-right:30px}}
+.carousel .cr-slide>*,.carousel .cr-slide figure{width:100%;max-width:none}
+.carousel .cr-slide img{width:100%;max-width:none}
