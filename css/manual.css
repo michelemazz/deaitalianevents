@@ -37,7 +37,9 @@
 @media (prefers-reduced-motion:reduce){.ticker-text{animation:none;padding-left:0}}
 
 /* ---- recensioni ---- */
-.reviews{position:relative;contain:inline-size;--n:3;--gap:18px}
+.reviews-widget{width:100%;min-width:0}
+.reviews{position:relative;--n:3;--gap:18px}
+.reviews-viewport{min-width:0}
 .reviews-viewport{overflow:hidden;margin:0 28.5px;padding-bottom:40px}
 .reviews-track{display:flex;gap:var(--gap);transition:transform .5s ease}
 .review{flex:0 0 calc((100% - var(--gap) * (var(--n) - 1)) / var(--n));background:#F4EDEC;min-width:0}
