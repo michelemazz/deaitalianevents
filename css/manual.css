@@ -258,3 +258,25 @@ img{transition:opacity .4s ease}
 .pkg .d304,.pkg .u305,.pkg .u309{width:auto}
 .pkg .d311{width:auto}
 .pkg .s314{white-space:nowrap;width:auto}
+
+/* icone Font Awesome (solo il file "solid", usato dalle icone dei servizi) */
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:swap;src:url(/css/fa-solid-900.woff2) format("woff2")}
+
+/* ---- landing: finiture generali (pulsanti, titoli, elenchi, immagini) ---- */
+a:has(>.s20){transition:background-color .3s,color .3s,transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+a:has(>.s20):hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(57,55,55,.2)}
+.hero h1,.d268 h1,.d268 .d271{text-shadow:0 2px 24px rgba(0,0,0,.28)}
+.d271{letter-spacing:.14em}
+.lp-region{margin-top:34px}
+.lp-region{position:relative;padding-bottom:16px;font:400 32px/1.2 Baskervville,serif!important;letter-spacing:.01em;color:#393737}
+.lp-region p{margin:0;font:inherit!important;color:inherit}
+.lp-region::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:2px;background:#BFA46F}
+.lp-region *{font-weight:400!important}
+img[src*="Ellipse-1"]{width:10px!important;height:10px!important;min-width:10px;border-radius:50%;background:#BFA46F;object-fit:none;object-position:-60px 0;margin-top:9px}
+.d302{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.d302:hover{transform:translateY(-4px)}
+.d394{transition:transform .35s}.d302:hover .d394{transform:scale(1.1)}
+section img,.d279 img{transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s}
+details>summary{transition:color .25s}
+details>summary:hover{color:#7a5f5c}
+html{scroll-padding-top:90px}
