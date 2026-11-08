@@ -132,3 +132,21 @@ img{transition:opacity .4s ease}
 .h2{top:0!important;height:auto!important}
 .site-header{position:fixed!important;top:0!important;left:0;right:0;height:auto!important;min-height:0!important}
 .h2{pointer-events:none}.h2 .site-header{pointer-events:auto}
+
+/* ---- footer ---- */
+.site-footer{background:linear-gradient(180deg,#393737 0%,#2c2a2a 100%);color:#D9CFCD;padding:64px 24px 36px;text-align:center}
+.sf-in{max-width:1140px;margin:0 auto;display:flex;flex-direction:column;align-items:center}
+.sf-logo img{display:block;width:96px;height:96px;opacity:.95}
+.sf-tag{margin:18px 0 0;font:italic 400 20px/1.4 Baskervville,serif;color:#F4EDEC}
+.sf-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 30px;margin:34px 0 0}
+.sf-nav a{font:600 13px/20px Alta,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#F4EDEC;padding:6px 0;position:relative}
+.sf-nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:#A38986;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.sf-nav a:hover::after,.sf-nav a:focus-visible::after{transform:scaleX(1)}
+.sf-mail{margin-top:26px;font:400 18px/1.4 Baskervville,serif;color:#F4EDEC;border-bottom:1px solid rgba(163,137,134,.6);padding-bottom:2px}
+.sf-mail:hover{color:#A38986}
+.sf-line{width:100%;max-width:520px;height:1px;margin:38px 0 22px;background:rgba(244,237,236,.16)}
+.sf-legal{margin:0;font:400 14px/1.6 Baskervville,serif;color:#A9A09E}
+.sf-small{margin:10px 0 0;font:400 14px/1.6 Baskervville,serif;color:#A9A09E}
+.sf-small a{color:#D9CFCD}.sf-small a:hover{color:#A38986}
+.sf-small span{margin:0 10px}
+@media (max-width:767px){.site-footer{padding:52px 20px 30px}.sf-nav{flex-direction:column;gap:2px;margin-top:28px}.sf-nav a{font-size:14px;padding:8px 0}.sf-tag{font-size:18px}}
