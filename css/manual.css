@@ -221,3 +221,40 @@ img{transition:opacity .4s ease}
 .post-back{margin:44px 0 0}.post-back a{font:600 13px/1 Alta,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#7a5f5c}
 @media (max-width:767px){.post-hero h1{font-size:28px}.post-grid{padding:44px 20px 70px}.post-wrap{padding:0 20px 70px}.post-body .lead{font-size:20px}.post-body h2{font-size:23px}.post-body h3{font-size:21px}.post-body p,.post-body li{font-size:18px}.post-cta{padding:26px 20px}}
 .post-card{min-width:0}.post-card h2{overflow-wrap:anywhere}
+
+/* ---- landing /wedding/: card dei pacchetti ---- */
+.pkg.d290{border:0;background:#fff;align-items:stretch;overflow:hidden;box-shadow:0 1px 2px rgba(57,55,55,.06),0 16px 36px rgba(57,55,55,.09);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.pkg.d290:hover{transform:translateY(-5px);box-shadow:0 2px 4px rgba(57,55,55,.06),0 24px 48px rgba(57,55,55,.15)}
+.pkg .d291{width:100%}
+.pkg .cr-viewport{overflow:hidden}
+.pkg .cr-slide img{width:100%;height:auto!important;aspect-ratio:3/2;object-fit:cover;display:block}
+.pkg .cr-prev,.pkg .cr-next{display:flex;align-items:center;justify-content:center;width:34px;height:34px;margin-top:-17px!important;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 2px 8px rgba(0,0,0,.18);opacity:0;transition:opacity .25s,background .25s}
+.pkg .cr-prev{left:12px!important}.pkg .cr-next{right:12px!important}
+.pkg:hover .cr-prev,.pkg:hover .cr-next{opacity:1}
+@media (hover:none){.pkg .cr-prev,.pkg .cr-next{opacity:1}}
+.pkg .cr-prev svg,.pkg .cr-next svg{width:14px;height:14px;fill:#393737;color:#393737}
+.pkg .cr-prev:hover,.pkg .cr-next:hover{background:#fff}
+.pkg>.d34{width:100%;box-sizing:border-box;padding:20px 20px 0}
+.pkg .d299{gap:8px 22px;flex-wrap:wrap}
+.pkg .s307{font:600 13px/1.2 Alta,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#7a5f5c}
+.pkg .d303 svg{fill:#A38986;color:#A38986}
+.pkg>.d310{width:100%;box-sizing:border-box;background:none;padding:8px 20px 0;align-items:center;text-align:center}
+.pkg .d311{align-self:center;text-align:center}
+.pkg .s314{color:#393737;font:400 38px/1.15 Baskervville,serif;letter-spacing:.01em}
+.pkg .d315{max-width:300px;margin:8px auto 0;color:#8a807e;font:italic 400 13px/1.45 Baskervville,serif}
+.pkg>.d316{align-self:stretch;width:auto;margin:18px 20px 16px;text-align:center}
+.pkg .a317{display:block;padding:16px 24px;border-radius:0;background:#393737;color:#fff;font:600 13px/1.2 Alta,sans-serif;font-style:normal;letter-spacing:.14em;text-transform:uppercase;transition:background .3s}
+.pkg .a317:hover{background:#A38986}
+.pkg>.d82{align-self:stretch;margin:0 20px 8px;border-top:1px solid #E6DEDC}
+.pkg summary{padding:14px 0}
+.pkg .d320{font:italic 400 17px/1.4 Baskervville,serif;color:#393737}
+.pkg .d324{border:0;padding:0 0 14px}
+.pkg-inc{list-style:none;margin:0;padding:0}
+.pkg-inc li{position:relative;padding:5px 0 5px 20px;font:400 16px/1.5 Baskervville,serif;color:#393737}
+.pkg-inc li::before{content:"";position:absolute;left:2px;top:14px;width:6px;height:6px;border-radius:50%;background:#A38986}
+.pkg>.d34>.d299{flex-direction:row;justify-content:center;align-items:center;width:100%;flex-wrap:wrap}
+.pkg .d300,.pkg .d308{width:auto;flex:0 0 auto}
+.pkg .d44{display:flex;align-items:center;gap:7px;width:auto}
+.pkg .d304,.pkg .u305,.pkg .u309{width:auto}
+.pkg .d311{width:auto}
+.pkg .s314{white-space:nowrap;width:auto}

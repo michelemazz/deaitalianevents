@@ -188,3 +188,12 @@ document.querySelectorAll('.lg-lang button').forEach((b) => b.addEventListener('
   document.querySelectorAll('.lg-lang button').forEach((x) => x.setAttribute('aria-pressed', x === b));
   document.querySelectorAll('.lg-doc').forEach((d) => { d.hidden = d.lang !== b.dataset.lang; });
 }));
+
+/* caroselli: tutte le foto di una galleria si caricano quando la galleria sta per comparire */
+(() => {
+  const all = [...document.querySelectorAll('.carousel')];
+  const eager = (c) => c.querySelectorAll('img').forEach((i) => { i.loading = 'eager'; });
+  if (!('IntersectionObserver' in window)) { all.forEach(eager); return; }
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { eager(e.target); io.unobserve(e.target); } }), { rootMargin: '900px 0px' });
+  all.forEach((c) => io.observe(c));
+})();
