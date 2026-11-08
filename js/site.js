@@ -13,6 +13,24 @@
   }
   const offscreen = (el) => el.classList.contains('is-offscreen');
 
+  /* le immagini delle slide successive alla prima si scaricano a pagina caricata */
+  const loadBg = () => $$('.bg-slide[data-bg]').forEach((s) => {
+    const url = s.dataset.bg, im = new Image();
+    im.onload = () => { s.style.backgroundImage = 'url("' + url + '")'; delete s.dataset.bg; };
+    im.src = url;
+  });
+  if (document.readyState === 'complete') setTimeout(loadBg, 200);
+  else addEventListener('load', () => setTimeout(loadBg, 200));
+
+  /* le sezioni compaiono con una dissolvenza leggera mentre si scorre */
+  if ('IntersectionObserver' in window && !reduce) {
+    const secs = $$('main section, body > section, body > div > section').filter((s, i) => i > 0);
+    const rv = new IntersectionObserver((es) => es.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('rv-in'); rv.unobserve(e.target); }
+    }), { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+    secs.forEach((s) => { s.classList.add('rv'); rv.observe(s); });
+  }
+
   /* menu */
   const header = $('.site-header'), toggle = $('.nav-toggle');
   if (header && toggle) {
@@ -36,6 +54,7 @@
     let i = 0;
     setInterval(() => {
       if (offscreen(box)) return;
+      if (slides[(i + 1) % slides.length].dataset.bg) return;
       slides[i].classList.toggle('is-active', false);
       i = (i + 1) % slides.length;
       slides[i].classList.toggle('is-active', true);

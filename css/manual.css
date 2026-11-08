@@ -115,3 +115,20 @@ details[open] .acc-closed{display:none!important}
 @media (max-width:1024px){.carousel.cr-outside .cr-viewport{margin-left:30px;margin-right:30px}}
 .carousel .cr-slide>*,.carousel .cr-slide figure{width:100%;max-width:none}
 .carousel .cr-slide img{width:100%;max-width:none}
+
+/* ---- finiture: comparsa delle sezioni, selezione, focus ---- */
+html.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+html.js .rv.rv-in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html.js .rv{opacity:1;transform:none;transition:none}}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+::selection{background:#A38986;color:#fff}
+a,button,summary{-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid #A38986;outline-offset:3px}
+a{transition:color .25s ease,opacity .25s ease}
+img{transition:opacity .4s ease}
+
+/* ---- header: sempre in alto, altezza propria (non legata all'altezza dello schermo) ---- */
+.site-header,.h2{bottom:auto!important}
+.h2{top:0!important;height:auto!important}
+.site-header{position:fixed!important;top:0!important;left:0;right:0;height:auto!important;min-height:0!important}
+.h2{pointer-events:none}.h2 .site-header{pointer-events:auto}
