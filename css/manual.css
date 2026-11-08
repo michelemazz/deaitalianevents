@@ -280,3 +280,4 @@ section img,.d279 img{transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .
 details>summary{transition:color .25s}
 details>summary:hover{color:#7a5f5c}
 html{scroll-padding-top:90px}
+.h1-reset{margin:0}
