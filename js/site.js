@@ -182,3 +182,9 @@
     });
   });
 })();
+
+/* pagine legali: cambio lingua IT / EN */
+document.querySelectorAll('.lg-lang button').forEach((b) => b.addEventListener('click', () => {
+  document.querySelectorAll('.lg-lang button').forEach((x) => x.setAttribute('aria-pressed', x === b));
+  document.querySelectorAll('.lg-doc').forEach((d) => { d.hidden = d.lang !== b.dataset.lang; });
+}));
