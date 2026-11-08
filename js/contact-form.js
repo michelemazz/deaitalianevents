@@ -26,6 +26,8 @@
     var show = function (msg) { if (err) err.textContent = msg; };
     show('');
 
+    var gdpr = form.elements['gdpr-agreement'];
+    if (gdpr && !gdpr.checked) { show('Please confirm that you have read the Privacy Policy and consent to the processing of your data.'); gdpr.focus(); return; }
     if (!form.checkValidity()) { form.reportValidity(); return; }
 
     var data = { access_key: ACCESS_KEY, subject: 'New request from deaitalianevents.com', from_name: 'DEA Italian Events website' };
