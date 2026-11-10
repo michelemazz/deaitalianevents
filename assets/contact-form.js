@@ -1,7 +1,7 @@
 // Sostituisce l'invio AJAX di Fluent Forms con Web3Forms (sito statico).
 // Imposta la tua access key da https://web3forms.com (gratis, legata alla tua email).
 (function () {
-  var ACCESS_KEY = 'INSERISCI_QUI_LA_ACCESS_KEY';
+  var ACCESS_KEY = '3df385cb-b9c7-4c1a-850d-730757a65c41';
   var ENDPOINT = 'https://api.web3forms.com/submit';
   var LABELS = {
     'dropdown': 'Type of Event',
